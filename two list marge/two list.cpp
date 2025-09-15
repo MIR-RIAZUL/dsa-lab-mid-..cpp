@@ -17,21 +17,24 @@ public:
 Node *mergeTwoLists(Node *head1, Node *head2)
 {
 
-    if (!head1)
+    if(head1==NULL)
+  {
         return head2;
-    if (!head2)
-        return head1;
+  }
+    else if (head2==NULL)
+{
+    return head1;
+}
 
-    if (head1->data < head2->data)
-    {
-        head1->next = mergeTwoLists(head1->next, head2);
-        return head1;
-    }
-    else
-    {
-        head2->next = mergeTwoLists(head1, head2->next);
-        return head2;
-    }
+if(head1->data<head2->data)
+{
+    head1->next=mergeTwoLists(head1->next,head2);
+}
+else 
+{
+    head2->next=mergeTwoLists(head1,head2->next);
+}
+   
 }
 
 // Print function
@@ -49,8 +52,8 @@ int main()
 {
 
     Node *list1 = new Node(1);
-    list1->next = new Node(3);
-    list1->next->next = new Node(5);
+    list1->next = new Node(5);
+    list1->next->next = new Node(6);
     list1->next->next->next = new Node(7);
 
     Node *list2 = new Node(2);
