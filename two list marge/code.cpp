@@ -29,7 +29,7 @@ Node *mergeTwoLists(Node *head1, Node *head2)
     }
     else
     {
-        head2->next = mergeTwoLists(head1, head2->next);
+        head2->next = mergeTwoLists(head1,head2->next);
         return head2;
     }
 }
