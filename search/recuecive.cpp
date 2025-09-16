@@ -1,17 +1,16 @@
 #include <iostream>
 using namespace std;
 
-// Recursive binary search function
-// Returns the index of target if found, otherwise -1
+
 int binarySearch(int arr[], int left, int right, int target) {
     if (left > right) {
-        return -1; // Not found
+        return -1; 
     }
 
-    int mid = left + (right - left) / 2; // Avoid overflow
+    int mid = left + (right - left) / 2; 
 
     if (arr[mid] == target) {
-        return mid; // Found
+        return mid; 
     } 
     else if (arr[mid] < target) {
         return binarySearch(arr, mid + 1, right, target); 
